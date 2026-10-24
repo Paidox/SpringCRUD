@@ -216,3 +216,18 @@ input[type="date"] {
     font-size: 14px;
     color: #333;
 }
+
+
+.sort-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.sort-link:hover {
+    color: #3b82f6;
+    text-decoration: none;
+}
