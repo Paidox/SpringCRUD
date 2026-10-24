@@ -1,0 +1,218 @@
+
+.page-body {
+    margin: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.search-input {
+    width: 220px;
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-search {
+    background-color: transparent;
+    border: 1px solid #337ab7;
+    color: #337ab7;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-search:hover {
+    background-color: #f8f9fa;
+}
+
+.add-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.add-button:hover {
+    background-color: #4cae4c;
+}
+
+/* Table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.custom-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    padding: 12px 10px;
+    text-align: left;
+}
+
+.custom-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #dee2e6;
+    color: #333;
+    vertical-align: middle;
+}
+
+.id-column {
+    width: 60px;
+}
+
+.row-editor-column {
+    width: 50px;
+    text-align: center;
+}
+
+.delete-column {
+    width: 50px;
+    text-align: center;
+}
+
+.btn-danger-icon {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-danger-icon:hover {
+    background-color: #c9302c;
+}
+
+.client-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-grid {
+    width: 100%;
+}
+
+.dialog-input {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.save-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Дополнения к вашим стилям */
+.btn-edit-icon {
+    color: #666;
+    text-decoration: none;
+}
+.btn-edit-icon:hover {
+    color: #337ab7;
+}
+
+.empty-message {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+.dialog-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 420px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.dialog-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group.mb-15 {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cancel-button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.cancel-button:hover {
+    background: #5a6268;
+}
+
+input[type="date"] {
+    font-family: inherit;
+    font-size: 14px;
+    color: #333;
+}

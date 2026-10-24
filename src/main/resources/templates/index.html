@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body class="page-body">
+
+<div class="toolbar">
+    <form th:action="@{/search}" method="get" class="search-container">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder="Search by name..." class="search-input"/>
+        <button type="submit" class="btn-search"><i class="fa fa-search"></i> Search</button>
+    </form>
+
+    <button type="button" class="add-button" onclick="openModal()"><i class="fa fa-plus"></i> Add new client</button>
+</div>
+
+<table class="custom-table">
+    <thead>
+    <tr>
+        <th class="id-column">ID</th>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Birth Date</th>
+        <th class="row-editor-column"></th>
+        <th class="delete-column"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${clients}">
+        <td class="id-column" th:text="${c.id}">1</td>
+        <td th:text="${c.fullName}">Имя</td>
+        <td th:text="${c.phoneNumber}">Телефон</td>
+        <td th:text="${c.city}">Город</td>
+        <td th:text="${c.country}">Страна</td>
+        <td th:text="${c.birthDate}">Дата</td>
+        <td class="row-editor-column">
+            <a th:href="@{'/clients/update/' + ${c.id}}" class="btn-edit-icon"><i class="fa fa-pen"></i></a>
+        </td>
+        <td class="delete-column">
+            <a th:href="@{'/clients/delete/' + ${c.id}}" class="btn-danger-icon">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(clients)}">
+        <td colspan="8" class="empty-message">No clients found.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div id="clientModal" class="client-dialog" th:style="${client != null and client.id != null} ? 'display: flex;' : 'display: none;'">
+    <div class="dialog-content">
+        <h3 class="dialog-title" th:text="${client != null and client.id != null} ? 'Edit Customer' : 'Add New Customer'">Customer</h3>
+
+        <form th:action="@{/clients}" th:object="${client}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="dialog-grid">
+                <div class="form-group">
+                    <label class="form-label">Full Name:</label>
+                    <input type="text" th:field="*{fullName}" class="dialog-input" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number:</label>
+                    <input type="text" th:field="*{phoneNumber}" class="dialog-input" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">City:</label>
+                    <input type="text" th:field="*{city}" class="dialog-input" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Country:</label>
+                    <input type="text" th:field="*{country}" class="dialog-input" />
+                </div>
+                <div class="form-group mb-15">
+                    <label class="form-label">Birth Date:</label>
+                    <input type="date" th:field="*{birthDate}" th:value="${client != null ? client.birthDate : ''}" class="dialog-input" />
+                </div>
+            </div>
+
+            <div class="dialog-buttons">
+                <button type="submit" class="save-button">Save</button>
+                <a th:href="@{/}" class="cancel-button">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('clientModal').style.display = 'flex';
+    }
+</script>
+
+</body>
+</html>
