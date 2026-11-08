@@ -20,7 +20,7 @@ public class Client {
   private String phoneNumber;
 
   @Column(name = "birth_date")
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @DateTimeFormat(pattern = "dd-MM-yyyy")
   private LocalDate birthDate;
 
   private String city;

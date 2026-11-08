@@ -10,7 +10,7 @@ public class Operator {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
-  @Column(name = "operator_fullname")
+  @Column(name = "operator_fullname", length = 256)
   private String fullName;
 
   @Column(name = "processing_time")
@@ -25,7 +25,7 @@ public class Operator {
   public Operator() {
   }
 
-  public Operator(Integer id, String fullName, int processingTime, int count_calls, int finished_calls) {
+  public Operator(String fullName, int processingTime, int count_calls, int finished_calls) {
     this.id = id;
     this.fullName = fullName;
     this.processingTime = processingTime;

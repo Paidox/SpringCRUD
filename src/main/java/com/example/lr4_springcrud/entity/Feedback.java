@@ -23,7 +23,7 @@ public class Feedback {
   private Client client;
 
   @Column(name = "feedback_datetime", nullable = false)
-  @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+  @DateTimeFormat(pattern = "dd-MM-yyyy'T'HH:mm")
   private LocalDateTime feedbackDatetime;
 
   @Column(name = "rating", nullable = false)
